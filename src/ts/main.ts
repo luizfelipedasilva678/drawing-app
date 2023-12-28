@@ -7,6 +7,7 @@ const LEFT_MOUSE_BUTTON = 1;
 const canvas = document.getElementById("drawing-area") as HTMLCanvasElement;
 const color = document.getElementById("color") as HTMLInputElement;
 const lineWidth = document.getElementById("line-width") as HTMLInputElement;
+const save = document.getElementById("save") as HTMLButtonElement;
 const clearButton = document.getElementById(
   "clear-button"
 ) as HTMLButtonElement;
@@ -34,6 +35,16 @@ function handleClearButtonClick() {
   ctx.clearRect(0, 0, width, height);
 }
 
+function handleSaveButtonClick() {
+  const dataUrl = canvas.toDataURL("image/png");
+  const a = document.createElement("a");
+  a.href = dataUrl;
+  a.download = "canvas.png";
+  a.click();
+  a.remove();
+}
+
 window.addEventListener("mousedown", handleMouseDown);
 window.addEventListener("mousemove", handleMouseMove);
 clearButton.addEventListener("click", handleClearButtonClick);
+save.addEventListener("click", handleSaveButtonClick);

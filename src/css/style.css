@@ -142,6 +142,7 @@ body {
   position: absolute;
 }
 
+.sidebar #save,
 .sidebar #clear-button {
   background: transparent;
   font-size: 1.6rem;
