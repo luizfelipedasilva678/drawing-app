@@ -132,3 +132,33 @@ body {
   line-height: 1;
   font-size: 1.6rem;
 }
+
+.sidebar {
+  background: #242424;
+  height: 100%;
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.sidebar #clear-button {
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+}
+
+.sidebar .actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.sidebar #line-width {
+  width: 4.5rem;
+  margin-top: 1rem;
+}

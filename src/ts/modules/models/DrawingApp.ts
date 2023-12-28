@@ -16,9 +16,14 @@ export default class DrawingApp {
     this.mouse.currentY = newPosition.y;
   }
 
-  draw(newPosition: { x: number; y: number }) {
+  draw(
+    newPosition: { x: number; y: number },
+    color: string,
+    lineWidth: string
+  ) {
     this.ctx.beginPath();
-    this.ctx.lineWidth = 10;
+    this.ctx.strokeStyle = color;
+    this.ctx.lineWidth = Number(lineWidth);
     this.ctx.lineCap = "round";
     // @ts-ignore
     this.ctx.moveTo(this.mouse.previousX, this.mouse.previousY);
